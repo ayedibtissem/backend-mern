@@ -5,11 +5,12 @@ const mongoose = require("mongoose");
 
 app.use(express.json());
 app.use(cors());
-
+res.setHeader("strictQuery,true)
 require("dotenv").config();
 mongoose.connect(process.env.DBURL);
 console.log("db connected");
 app.get("/", (req, res) => {
+  res.setHeader("Access-Control-Allow-Credentials","true");
   res.send("hello ");
 });
 
