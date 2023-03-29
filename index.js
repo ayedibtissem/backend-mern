@@ -5,7 +5,7 @@ const mongoose = require("mongoose");
 
 app.use(express.json());
 app.use(cors());
-set.mongoose("strictQuery","true")
+mongoose.set("strictQuery","true")
 require("dotenv").config();
 mongoose.connect(process.env.DBURL);
 console.log("db connected");
